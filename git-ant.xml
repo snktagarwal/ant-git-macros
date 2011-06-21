@@ -41,6 +41,21 @@
 			</git>
 		</sequential>
 	</macrodef>
+
+	<macrodef name="git-reset">
+		<attribute name="toWhere" default="HEAD"/>
+		<attribute name="options" default="" />
+		<attribute name="failerror" default="false" />
+		<attribute name="dir" />
+		<sequential>
+				<git command="reset" dir="@{dir}" options="@{options}" failerror="@{failerror}" >
+				<args>
+					<arg value="@{toWhere}" />
+				</args>
+			</git>
+		</sequential>
+	</macrodef>
+
 	<macrodef name="git-push">
 		<attribute name="remote" default="origin"/>
 		<attribute name="dir" />
