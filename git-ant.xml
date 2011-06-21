@@ -161,7 +161,7 @@
 					<arg value="@{branchInTo}" />
 				</args>
 			</git>
-			<git command="merge" dir="@{dir}" options="@{options}" >
+			<git command="merge" dir="@{dir}" options="@{options}" failerror="@{failerror}">
 				<args>
 					<arg value="@{branchFrom}" />
 				</args>
