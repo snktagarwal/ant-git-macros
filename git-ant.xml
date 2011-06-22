@@ -56,6 +56,22 @@
 		</sequential>
 	</macrodef>
 
+	<macrodef name="git-archive">
+		<attribute name="treepath" />
+		<attribute name="format" />
+		<attribute name="options" default="" />
+		<attribute name="failerror" default="false" />
+		<attribute name="dir" />
+		<sequential>
+				<git command="archive" dir="@{dir}" options="@{options}" failerror="@{failerror}" >
+				<args>
+					<arg value="--format=@{format}" />
+					<arg value="@{treepath}" />
+				</args>
+			</git>
+		</sequential>
+	</macrodef>
+
 	<macrodef name="git-push">
 		<attribute name="remote" default="origin"/>
 		<attribute name="dir" />
