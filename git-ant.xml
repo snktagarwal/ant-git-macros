@@ -163,6 +163,16 @@
 		</sequential>
 	</macrodef>
 
+	<macrodef name="git-clean">
+		<attribute name="dir" />
+		<attribute name="options" default=""  />
+		<attribute name="failerror" default="false" />
+		<sequential>
+			<git command="clean" dir="@{dir}" options="@{options}" failerror="@{failonerror}" >
+				<args />
+			</git>
+		</sequential>
+	</macrodef>
 
 	<macrodef name="git-checkout">
 		<attribute name="branch" />
